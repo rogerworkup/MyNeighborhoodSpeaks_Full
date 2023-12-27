@@ -21,3 +21,47 @@
     text-decoration: none;
     margin: 0px 10px;
 }
+
+.signup_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.signup_form {
+    border: 1px solid gray;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.signup_form form input{
+    margin-top: 2px;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid rgb(216, 213, 213);
+}
+
+.signup_form form button, .signup_form button {
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid rgb(216, 213, 213);
+    color: white;
+
+}
+
+.signup_form form button {
+    background-color: rgb(17, 80, 227);
+
+}
+
+.signup_form button {
+    background-color: rgb(3, 177, 18);
+}
+
+.signup_btn {
+    margin-top: 8px;
+}

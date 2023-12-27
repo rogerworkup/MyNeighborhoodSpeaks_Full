@@ -1,18 +1,13 @@
 import './style.css'
 import { Link } from 'react-router-dom'
 
-const Register = () => {
+function Login() {
   return (
     <div className='signup_container'>
       <div className='signup_form'>
-        <h2>Sing Up</h2>
+        <h2>Login</h2>
         <br />
-        <form action="">
-          <div>
-            <label htmlFor="name">Username:</label>
-            <input type="text" name="" id="" placeholder='Enter username' />
-          </div>
-          <br />
+        <form action="">          
           <div>
             <label htmlFor="email">Email:</label>
             <input type="email" name="" id="" placeholder='Enter Email'/>
@@ -22,14 +17,14 @@ const Register = () => {
             <label htmlFor="password">Password:</label>
             <input type="password" name="" id="" placeholder='**********'/>
           </div>
-          <button className='signup_btn'>Sign up</button>
+          <button className='signup_btn'>Login</button>
         </form>
         <br />
-        <p>Already have account,</p>
-        <Link to='/login'><button>Login</button></Link>
+        <p>Not Registered?</p>
+        <Link to='/register'><button>Sign Up</button></Link>
       </div>
     </div>
   )
 }
 
-export default Register
+export default Login
