@@ -1,7 +1,22 @@
-import './style.css'
+import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+
+import './style.css'
 
 function Login() {
+  const [username, setUsername] = useState()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post('http://localhost:3001/register', {email, password})
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+  }
+
   return (
     <div className='signup_container'>
       <div className='signup_form'>
