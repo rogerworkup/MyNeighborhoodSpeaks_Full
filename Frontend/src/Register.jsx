@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 import './style.css'
@@ -9,11 +9,12 @@ function Register() {
   const [username, setUsername] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
     axios.post('http://localhost:3001/register', {username, email, password})
-    .then(res => console.log(res))
+    .then(res => navigate('/login'))
     .catch(err => console.log(err))
   }
 
