@@ -15,7 +15,7 @@ function Login() {
     axios.post('http://localhost:3001/login', {email, password})
     .then(res => {
       if(res.data === "Success") {
-        navigate('/')
+        window.location.href = "/"
       }
     })
     .catch(err => console.log(err))

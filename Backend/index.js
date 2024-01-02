@@ -67,9 +67,14 @@ app.post('/login', (req, res) => {
                 }
             })
         } else {
-            res.json("user not exist")
+            return res.json("user not exist")
         }
     })
+})
+
+app.get('/logout', (req, res) => {
+    res.clearCookie('token');
+    return res.json("Success")
 })
 
 app.listen(3001, () => {
