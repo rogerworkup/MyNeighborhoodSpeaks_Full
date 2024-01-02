@@ -1,14 +1,29 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import { useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
+import axios from 'axios'
 
 import Navbar from "./Navbar"
 import Register from "./Register"
 import Login from './Login'
 import Home from './Home'
 
-const App = () => {
+export const userContext = createContext()
+
+function App() {
+  const [user, setUser] = useState({})
+
+  axios.defaults.withCredentials = true;
+  useEffect(() => {
+    axios.get('http://localhost:3001/')
+    .then(user => {
+      setUser(user.data)
+    })
+    .catch(err => console.log(err))
+  }, [])
+
   return (
-    <BrowserRouter>
+    <userContext.Provider value={user}>
+      <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -16,6 +31,7 @@ const App = () => {
         <Route path="/login" element={<Login />}></Route>
       </Routes>
     </BrowserRouter>
+    </userContext.Provider>
   )
 }
 
