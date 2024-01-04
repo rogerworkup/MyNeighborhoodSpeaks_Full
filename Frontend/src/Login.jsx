@@ -14,8 +14,12 @@ function Login() {
     e.preventDefault()
     axios.post('http://localhost:3001/login', {email, password})
     .then(res => {
-      if(res.data === "Success") {
-        window.location.href = "/"
+      if(res.data.Status === "Success") {
+        if(res.data.role === "admin") {
+          window.location.href = "/dashboard"
+        } else {
+          window.location.href = "/"
+        }
       }
     })
     .catch(err => console.log(err))

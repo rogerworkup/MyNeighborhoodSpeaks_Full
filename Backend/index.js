@@ -61,7 +61,7 @@ app.post('/login', (req, res) => {
                     const token = jwt.sign({email: user.email, username: user.username},
                         "jwt-secret-key", {expiresIn: '1d'})
                     res.cookie('token', token)
-                    return res.json("Success")
+                    return res.json({Status: "Success", role: user.role})
                 } else{
                     return res.json("Password is incorrect")
                 }

@@ -6,6 +6,8 @@ import Navbar from "./Navbar"
 import Register from "./Register"
 import Login from './Login'
 import Home from './Home'
+import Dashboard from './Dashboard'
+
 
 export const userContext = createContext()
 
@@ -28,7 +30,8 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
-        <Route path="/" element={<Home />}></Route>        
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
       </Routes>
     </BrowserRouter>
     </userContext.Provider>
